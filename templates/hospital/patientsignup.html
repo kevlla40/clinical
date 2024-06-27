@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>LazyCoder || sumit</title>
+  <title>CLINIQUE LA NOUVELLE</title>
   <style type="text/css">
     body {
       color: #aa082e;
@@ -67,7 +67,7 @@
     <div class="container register-form">
       <div class="form">
         <div class="note">
-          <p>Register to Hospital</p>
+          <p>Register to CLINIQUE</p>
         </div>
 
         <div class="form-content">
@@ -97,7 +97,7 @@
                 {% render_field userForm.password class="form-control" placeholder="Password" %}
               </div>
               <div class="form-group">
-                {% render_field patientForm.mobile class="form-control" pattern="[6789][0-9]{9}" placeholder="Mobile Number" %}
+                {% render_field patientForm.mobile class="form-control" pattern="\d{10}" placeholder="Mobile Number" %}
               </div>
               <div class="form-group">
                 {% render_field patientForm.assignedDoctorId class="form-control" placeholder="Doctor" %}
@@ -113,12 +113,8 @@
 
   </form>
 
-  {% include "hospital/footer.html" %}
+ 
 </body>
-<!--
-developed By : sumit kumar
-facebook : fb.com/sumit.luv
-youtube : youtube.com/lazycoders
--->
+
 
 </html>

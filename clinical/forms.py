@@ -14,7 +14,7 @@ class AdminSigupForm(forms.ModelForm):
         }
 
 
-#for student related form
+#for doctor related form
 class DoctorUserForm(forms.ModelForm):
     class Meta:
         model=User
@@ -26,10 +26,19 @@ class DoctorForm(forms.ModelForm):
     class Meta:
         model=models.Doctor
         fields=['address','mobile','department','status','profile_pic']
-
-
-
-#for teacher related form
+#for nurse related form
+class NurseUserForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields=['first_name','last_name','username','password']
+        widgets = {
+        'password': forms.PasswordInput()
+        }
+class NurseForm(forms.ModelForm):
+    class Meta:
+        model=models.Nurse
+        fields=['address','mobile','department','status','profile_pic']
+#for patient related form
 class PatientUserForm(forms.ModelForm):
     class Meta:
         model=User
@@ -41,6 +50,7 @@ class PatientForm(forms.ModelForm):
     #this is the extrafield for linking patient and their assigend doctor
     #this will show dropdown __str__ method doctor model is shown on html so override it
     #to_field_name this will fetch corresponding value  user_id present in Doctor model and return it
+    assignedNurseId=forms.ModelChoiceField(queryset=models.Nurse.objects.all().filter(status=True),empty_label="Name and Department", to_field_name="user_id")
     assignedDoctorId=forms.ModelChoiceField(queryset=models.Doctor.objects.all().filter(status=True),empty_label="Name and Department", to_field_name="user_id")
     class Meta:
         model=models.Patient
@@ -50,6 +60,7 @@ class PatientForm(forms.ModelForm):
 
 class AppointmentForm(forms.ModelForm):
     doctorId=forms.ModelChoiceField(queryset=models.Doctor.objects.all().filter(status=True),empty_label="Doctor Name and Department", to_field_name="user_id")
+    NurseId=forms.ModelChoiceField(queryset=models.Nurse.objects.all().filter(status=True),empty_label="Nurse Name and Department", to_field_name="user_id")
     patientId=forms.ModelChoiceField(queryset=models.Patient.objects.all().filter(status=True),empty_label="Patient Name and Symptoms", to_field_name="user_id")
     class Meta:
         model=models.Appointment
@@ -57,6 +68,8 @@ class AppointmentForm(forms.ModelForm):
 
 
 class PatientAppointmentForm(forms.ModelForm):
+    NurseId=forms.ModelChoiceField(queryset=models.Nurse.objects.all().filter(status=True),empty_label="Nurse Name and Department", to_field_name="user_id")
+
     doctorId=forms.ModelChoiceField(queryset=models.Doctor.objects.all().filter(status=True),empty_label="Doctor Name and Department", to_field_name="user_id")
     class Meta:
         model=models.Appointment
@@ -70,7 +83,3 @@ class ContactusForm(forms.Form):
     Message = forms.CharField(max_length=500,widget=forms.Textarea(attrs={'rows': 3, 'cols': 30}))
 
 
-
-#Developed By : sumit kumar
-#facebook : fb.com/sumit.luv
-#Youtube :youtube.com/lazycoders

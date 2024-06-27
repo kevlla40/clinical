@@ -8,7 +8,7 @@
     .card {
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
       max-width: 300px;
-      margin: auto;
+      margin: 2px;
       text-align: center;
       font-family: arial;
     }
@@ -38,8 +38,10 @@
 
     .grid-container {
       display: grid;
-      grid-template-columns: auto auto auto;
-      padding: 10px;
+      grid-template-columns: 280px 280px 280px 280px;
+      grid-gap: 10px; 
+      padding: 3px;
+      
     }
 
     a:link {
@@ -59,7 +61,7 @@
   <div class="grid-container">
     <div class="grid-item">
       <div class="card">
-        <img src="{% static "images/admin.png" %}" alt="John" style="width:100%">
+        <img src="{% static "images/admin.png" %}" alt="clinique" style="width:100%">
         <p class="title">ADMIN</p>
         <p><button><a href="/adminclick">View</a></button></p>
       </div>
@@ -68,9 +70,17 @@
 
     <div class="grid-item">
       <div class="card">
-        <img src="{% static "images/doctor.png" %}" alt="John" style="width:100%">
+        <img src="{% static "images/doctor.png" %}" alt="clinique" style="width:100%">
         <p class="title">DOCTOR</p>
         <p><button><a href="/doctorclick">View</a></button></p>
+      </div>
+    </div>
+
+    <div class="grid-item">
+      <div class="card">
+        <img src="{% static "images/nurses.png" %}" alt="clinique" style="width:100%">
+        <p class="title">NURSE</p>
+        <p><button><a href="/nurseclick">View</a></button></p>
       </div>
     </div>
 
@@ -83,11 +93,7 @@
     </div>
 
   </div>
-  <!--
-  developed By : sumit kumar
-  facebook : fb.com/sumit.luv
-  youtube : youtube.com/lazycoders
-  -->
+  
 
 </body>
 

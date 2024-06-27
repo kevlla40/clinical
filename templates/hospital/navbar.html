@@ -13,52 +13,50 @@
   <style type="text/css">
     .bs-example {
       margin: 0px;
-
+      text-align: center;
     }
 
     .navbar-brand {
-      font-size: 20px;
-      font-family: sans-serif;
+      font-size: 36px; /* Increase font size for better visibility */
+      font-family: 'Arial Black', sans-serif; /* Use a bold font */
+      text-align: center;
+      width: 100%; /* Ensure the text takes full width */
+      color: #337AB7; /* Text color */
+      /* Add glowing effect */
+      text-shadow: 0 0 10px #eeeeee, 0 0 20px #000000, 0 0 30px #000000, 0 0 40px #FF69B4, 0 0 50px #FF69B4, 0 0 60px #FF69B4, 0 0 70px #FF69B4;
+      animation: glow 1s ease-in-out infinite alternate;
+    }
 
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #eeeeee, 0 0 20px #000000, 0 0 30px #000000, 0 0 40px #FF69B4, 0 0 50px #FF69B4, 0 0 60px #FF69B4, 0 0 70px #FF69B4;
+      }
+
+      to {
+        text-shadow: 0 0 20px #eeeeee, 0 0 30px #FF69B4, 0 0 40px #FF69B4, 0 0 50px #FF69B4, 0 0 60px #FF69B4, 0 0 70px #FF69B4, 0 0 80px #FF69B4;
+      }
+    }
+
+    .navbar-nav {
+      margin-left: auto; /* Align navbar links to the right */
+    }
+
+    .nav-item {
+      margin-right: 10px; /* Adjust spacing between navbar links */
     }
   </style>
 </head>
 
 <body>
 
-
-
   <div class="bs-example">
     <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background:#337AB7;">
-      <a href="/" class="navbar-brand">Hospital Management</a>
+      <a href="/" class="navbar-brand">CLINIQUE LANOUVELLE MANAGEMENT</a>
       <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
       </button>
-
-      <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-        <div class="navbar-nav">
-
-          <a href="/adminclick" class="nav-item nav-link">Admin</a>
-          <a href="/doctorclick" class="nav-item nav-link">Doctor</a>
-          <a href="/patientclick" class="nav-item nav-link">Patient</a>
-
-
-        </div>
-
-        <div class="navbar-nav">
-          <a href="/aboutus" class="nav-item nav-link">About Us</a>
-          <a href="/contactus" class="nav-item nav-link">Contact Us</a>
-        </div>
-
-      </div>
     </nav>
   </div>
-
-  <!--
-  developed By : sumit kumar
-  facebook : fb.com/sumit.luv
-  youtube : youtube.com/lazycoders
-  -->
 
 </body>
 
